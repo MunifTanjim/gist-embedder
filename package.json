@@ -1,0 +1,36 @@
+{
+  "name": "gist-embedder",
+  "description": "Library for Embedding GitHub Gist",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -p"
+  },
+  "repository": "https://github.com/MunifTanjim/gist-embedder",
+  "keywords": [
+    "gist",
+    "embed"
+  ],
+  "author": {
+    "name": "Munif Tanjim",
+    "url": "https://muniftanjim.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MunifTanjim/gist-embedder/issues"
+  },
+  "homepage": "https://github.com/MunifTanjim/gist-embedder",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "jsonp-promise": "^0.1.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^2.6.1"
+  }
+}
