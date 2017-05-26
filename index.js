@@ -1,1 +1,1 @@
-require('./lib/gist-embedder')
+module.exports = require('./lib/gist-embedder')

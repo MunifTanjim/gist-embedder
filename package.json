@@ -1,10 +1,11 @@
 {
   "name": "gist-embedder",
   "description": "Library for Embedding GitHub Gist",
-  "version": "0.1.1",
-  "main": "index.js",
+  "version": "0.1.5",
+  "main": "dist/gist-embedder.min.js",
+  "module": "index.js",
   "scripts": {
-    "build": "webpack -p"
+    "build": "webpack"
   },
   "repository": "https://github.com/MunifTanjim/gist-embedder",
   "keywords": [
@@ -20,9 +21,6 @@
     "url": "https://github.com/MunifTanjim/gist-embedder/issues"
   },
   "homepage": "https://github.com/MunifTanjim/gist-embedder",
-  "files": [
-    "dist"
-  ],
   "dependencies": {
     "jsonp-promise": "^0.1.2"
   },

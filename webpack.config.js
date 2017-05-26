@@ -1,6 +1,8 @@
 const webpack = require('webpack')
 const path = require('path')
 
+const config = []
+
 const definePlugin = new webpack.DefinePlugin({
   'process.env': {
     NODE_ENV: JSON.stringify(process.env.NODE_ENV),
@@ -8,30 +10,45 @@ const definePlugin = new webpack.DefinePlugin({
   }
 })
 
-module.exports = {
-  entry: {
-    "git-embedder": path.join(__dirname, 'index.js')
-  },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].min.js'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: path.resolve(__dirname, 'node_modules'),
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env', 'es2015']
+const uglifyPlugin = new webpack.optimize.UglifyJsPlugin({
+  compress: {}
+})
+
+function generateConfig(name) {
+  let minify = name.indexOf('min') !== -1
+
+  let config = {
+    entry: path.join(__dirname, 'index.js'),
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: `${name}.js`,
+      library: 'GistEmbedder',
+      libraryTarget: 'umd'
+    },
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: path.resolve(__dirname, 'node_modules'),
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['env', 'es2015']
+            }
           }
         }
-      }
-    ]
-  },
-  resolve: {
-    extensions: ['.js']
-  },
-  plugins: [definePlugin]
+      ]
+    },
+    plugins: [definePlugin]
+  }
+
+  if (minify) config.plugins.push(uglifyPlugin)
+
+  return config
 }
+
+;['gist-embedder', 'gist-embedder.min'].forEach(name => {
+  config.push(generateConfig(name))
+})
+
+module.exports = config
