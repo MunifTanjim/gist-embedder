@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Gist Embedder</title>
+  <script
+    src='https://unpkg.com/gist-embedder@0.1.5/dist/gist-embedder.min.js'>
+  </script>
+</head>
+
+<body>
+  <h1>
+    <a style='text-decoration:none; color: initial;' href='https://github.com/MunifTanjim/gist-embedder'>
+      Gist Embedder
+    </a>
+  </h1>
+
+  <h2>Examples</h2>
+
+  <h4>Embed Whole Gist</h4>
+  <code
+    data-gist-id='9a6413b3ba584ae68330856ed19888cd'>
+  </code>
+
+  <h4>Embed Single File (main.js)</h4>
+  <code
+    data-gist-id='9a6413b3ba584ae68330856ed19888cd'
+    data-gist-file='main.js'>
+  </code>
+
+  <h4>Show Specific Lines ( 11 to 18 )</h4>
+  <code
+    data-gist-id='9a6413b3ba584ae68330856ed19888cd'
+    data-gist-file='index.html'
+    data-gist-lines='11-18'>
+  </code>
+
+  <h4>Highlight Specific Lines ( 7 &amp; 11 to 13 )</h4>
+  <code
+    data-gist-id='9a6413b3ba584ae68330856ed19888cd'
+    data-gist-file='index.html'
+    data-gist-highlight='7,11-13'>
+  </code>
+
+  <h4>Hide Footer</h4>
+  <code
+    data-gist-id='9a6413b3ba584ae68330856ed19888cd'
+    data-gist-file='main.js'
+    data-gist-no-footer='true'>
+  </code>
+
+  <h4>Hide Gutter</h4>
+  <code
+    data-gist-id='9a6413b3ba584ae68330856ed19888cd'
+    data-gist-file='main.js'
+    data-gist-no-gutter='true'>
+  </code>
+
+  <script>
+    var gistEmbedder = new GistEmbedder()
+    gistEmbedder.embedAll()
+  </script>
+</body>
+
+</html>
