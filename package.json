@@ -1,7 +1,7 @@
 {
   "name": "gist-embedder",
   "description": "Library for Embedding GitHub Gist",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "main": "dist/gist-embedder.min.js",
   "module": "index.js",
   "scripts": {

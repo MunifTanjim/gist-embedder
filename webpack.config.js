@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 
-const config = []
+const webpackConfigs = []
 
 const definePlugin = new webpack.DefinePlugin({
   'process.env': {
@@ -48,7 +48,7 @@ function generateConfig(name) {
 }
 
 ;['gist-embedder', 'gist-embedder.min'].forEach(name => {
-  config.push(generateConfig(name))
+  webpackConfigs.push(generateConfig(name))
 })
 
-module.exports = config
+module.exports = webpackConfigs

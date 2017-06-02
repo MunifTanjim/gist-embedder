@@ -2,6 +2,9 @@
 
 Library for Embedding GitHub Gist.
 
+[![npm](https://img.shields.io/npm/v/gist-embedder.svg)](https://www.npmjs.com/package/gist-embedder)
+[![license](https://img.shields.io/github/license/MunifTanjim/gist-embedder.svg)](https://github.com/MunifTanjim/gist-embedder/blob/master/LICENSE)
+
 ## Installation
 
 **Using npm**
